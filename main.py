@@ -8,17 +8,21 @@ def create_folder(folder_name):
     except FileExistsError:
         print(f"Папка {folder_name} уже существует")
 
-    # Пример использования
-
-
-create_folder("Новая папка")
-
 
 def create_file_with_extension(file_name, extension):
     file_path = os.path.join(os.getcwd(), file_name + '.' + extension)
     with open(file_path, 'w') as f:
-        f.write('Привет, мир!')
+        print(f"Файл {file_path} успешно создан")
 
 
-# Пример использования
-create_file_with_extension('новый_файл', 'txt')
+def main():
+    create_folder("handlers")
+    create_folder("keyboards")
+    create_folder("system")
+    create_folder("setting")
+    create_file_with_extension('requirements', 'txt')
+    create_file_with_extension('README', 'md')
+
+
+if __name__ == '__main__':
+    main()
