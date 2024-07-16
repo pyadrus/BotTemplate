@@ -26,6 +26,8 @@ def main():
     create_file_with_extension('Новый_проект/requirements', 'txt') # Создание файла с расширением
     create_file_with_extension('Новый_проект/README', 'md') # Создание файла с расширением
     create_file_with_extension('Новый_проект/main', 'py') # Создание файла с расширением
+    create_file_with_extension('Новый_проект/', 'gitignore')  # Создание файла с расширением
+
     create_file_with_extension('Новый_проект/system/dispatcher', 'py') # Создание файла с расширением
     create_file_with_extension('Новый_проект/setting/config', 'ini') # Создание файла с расширением
     create_file_with_extension('Новый_проект/handlers/handlers', 'py') # Создание файла с расширением
