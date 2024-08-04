@@ -18,20 +18,20 @@ def create_file_with_extension(file_name, extension):
 
 
 def main():
-    create_folder("Новый_проект/handlers") # Создание папки
-    create_folder("Новый_проект/keyboards") # Создание папки
-    create_folder("Новый_проект/system") # Создание папки
-    create_folder("Новый_проект/setting") # Создание папки
+    create_folder("Новый_проект/handlers")  # Создание папки
+    create_folder("Новый_проект/keyboards")  # Создание папки
+    create_folder("Новый_проект/system")  # Создание папки
+    create_folder("Новый_проект/setting")  # Создание папки
 
-    create_file_with_extension('Новый_проект/requirements', 'txt') # Создание файла с расширением
-    create_file_with_extension('Новый_проект/README', 'md') # Создание файла с расширением
-    create_file_with_extension('Новый_проект/main', 'py') # Создание файла с расширением
+    create_file_with_extension('Новый_проект/requirements', 'txt')  # Создание файла с расширением
+    create_file_with_extension('Новый_проект/README', 'md')  # Создание файла с расширением
+    create_file_with_extension('Новый_проект/main', 'py')  # Создание файла с расширением
     create_file_with_extension('Новый_проект/', 'gitignore')  # Создание файла с расширением
 
-    create_file_with_extension('Новый_проект/system/dispatcher', 'py') # Создание файла с расширением
-    create_file_with_extension('Новый_проект/setting/config', 'ini') # Создание файла с расширением
-    create_file_with_extension('Новый_проект/handlers/handlers', 'py') # Создание файла с расширением
-    create_file_with_extension('Новый_проект/keyboards/keyboards', 'py') # Создание файла с расширением
+    create_file_with_extension('Новый_проект/system/dispatcher', 'py')  # Создание файла с расширением
+    create_file_with_extension('Новый_проект/setting/config', 'ini')  # Создание файла с расширением
+    create_file_with_extension('Новый_проект/handlers/handlers', 'py')  # Создание файла с расширением
+    create_file_with_extension('Новый_проект/keyboards/keyboards', 'py')  # Создание файла с расширением
 
 
 if __name__ == '__main__':
