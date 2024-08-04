@@ -34,6 +34,26 @@ def main():
     create_file_with_extension(f'{name_project}/handlers/handlers', 'py')  # Создание файла с расширением
     create_file_with_extension(f'{name_project}/keyboards/keyboards', 'py')  # Создание файла с расширением
 
+    # Шаг 1: Создание файла и запись кода
+    with open(f'{name_project}/system/dispatcher.py', 'w', encoding='utf-8') as file:
+        code_lines = [
+            'import configparser\n\n',
+            'from aiogram import Bot, Dispatcher, Router\n',
+            'from aiogram.fsm.storage.memory import MemoryStorage\n\n',
+            'config = configparser.ConfigParser(empty_lines_in_values=False, allow_no_value=True)\n',
+            'config.read("setting/config.ini")  # Чтение файла\n',
+            'BOT_TOKEN = config["BOT_TOKEN"]["BOT_TOKEN"]\n\n',
+            'bot = Bot(\n',
+            '    token=BOT_TOKEN,\n',
+            ')\n',
+            'storage = MemoryStorage()  # Хранилище\n',
+            'dp = Dispatcher(storage=storage)\n\n',
+            'ADMIN_USER_ID = 535185511, 301634256\n\n',
+            'router = Router()\n',
+            'dp.include_router(router)\n'
+        ]
+        file.writelines(code_lines)
+
 
 if __name__ == '__main__':
     main()
