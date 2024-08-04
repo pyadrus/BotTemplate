@@ -1,4 +1,4 @@
-Простой проект, для создания Telegram ботов на python.
+Простой проект, для создания Telegram ботов на python, используя библиотеку Aiogram 3.
 
 Обратная связь
 Telegram: https://t.me/PyAdminRU
