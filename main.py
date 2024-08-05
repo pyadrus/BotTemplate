@@ -59,23 +59,22 @@ def main():
             code_lines = [
                 'import asyncio\n',
                 'import logging\n',
-                'import sys\n',
+                'import sys\n\n',
 
                 'from loguru import logger\n',
 
-                'from handlers.user_handlers.greeting_handlers import register_greeting_handler\n',
-                'from system.dispatcher import dp, bot\n',
+                'from handlers.greeting_handlers import register_greeting_handler\n',
+                'from system.dispatcher import dp, bot\n\n',
 
-                'logger.add("logs/log.log", retention="1 days", enqueue=True)  # Логирование бота\n',
+                'logger.add("logs/log.log", retention="1 days", enqueue=True)  # Логирование бота\n\n',
 
                 'async def main() -> None:\n',
-                '    """Запуск бота https://t.me/cforb_bot"""\n',
                 '    await dp.start_polling(bot)\n',
-                '    register_greeting_handler()\n',
+                '    register_greeting_handler()\n\n',
 
                 'if __name__ == "__main__":\n',
                 '    logging.basicConfig(level=logging.INFO, stream=sys.stdout)\n',
-                '    asyncio.run(main())\n',
+                '    asyncio.run(main())\n\n',
             ]
             file.writelines(code_lines)
 
@@ -84,9 +83,9 @@ def main():
                 code_lines = [
                     'from aiogram.filters import CommandStart\n',
                     'from aiogram.types import Message\n',
-                    'from loguru import logger\n',
+                    'from loguru import logger\n\n',
 
-                    'from system.dispatcher import bot, dp\n',
+                    'from system.dispatcher import bot, dp\n\n',
 
                     '@dp.message(CommandStart())\n',
                     'async def command_start_handler(message: Message) -> None:\n',
@@ -98,11 +97,11 @@ def main():
                     '    logger.info(f"{user_id} {user_name} {user_first_name} {user_last_name} {user_date}")\n',
 
                     '    sign_up_text = "Добро пожаловать"\n',
-                    '    await bot.send_message(message.from_user.id, sign_up_text, disable_web_page_preview=True)\n',
+                    '    await bot.send_message(message.from_user.id, sign_up_text, disable_web_page_preview=True)\n\n',
 
                     'def register_greeting_handler():\n',
                     '    """Регистрируем handlers для бота"""\n',
-                    '    dp.message.register(command_start_handler)  # Обработчик команды /start, он же пост приветствия 👋\n',
+                    '    dp.message.register(command_start_handler)  # Обработчик команды /start, он же пост приветствия 👋\n\n',
 
                 ]
                 file.writelines(code_lines)
